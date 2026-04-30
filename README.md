@@ -53,6 +53,10 @@ Antes de ejecutar el sistema, se debe copiar el archivo:
 
 ```text
 967_buildings.csv.gz
+
+download:
+
+https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/967_buildings.csv.gz
 ```
 
 en la siguiente ruta:
