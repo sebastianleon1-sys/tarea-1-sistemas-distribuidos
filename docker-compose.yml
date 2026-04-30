@@ -1,0 +1,35 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: redis_cache
+    ports:
+      - "6379:6379"
+    command: >
+      redis-server
+      --maxmemory 200mb
+      --maxmemory-policy allkeys-lfu
+      --save ""
+      --appendonly no
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: ./app
+    container_name: app_service
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CACHE_PAYLOAD_BYTES=75000
+    volumes:
+      - ./output:/app/output:z
+    command: >
+      python main.py
+      --distribution both
+      --queries 10000
+      --ttl 300
+      --seed 42

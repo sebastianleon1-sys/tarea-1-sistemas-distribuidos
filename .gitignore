@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# Salidas y resultados
+output/
+app/output/
+experiment_results/
+*.log
+
+# Dataset pesado
+app/data/*.csv
+app/data/*.csv.gz
+data/*.csv
+data/*.csv.gz
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Variables de entorno
+.env
+
+# LaTeX / PDFs
+*.aux
+*.toc
+*.out
+*.synctex.gz
+*.pdf
