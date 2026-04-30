@@ -179,9 +179,6 @@ Los gráficos principales generados por el sistema son:
 04_latencias_p50_p95_50mb.png
 05_eviction_rate_lru_por_tamano.png
 06_hit_rate_por_query_q1_q5.png
-07_throughput_lru_por_tamano.png
-08_memoria_redis_lru.png
-09_cache_efficiency_lru_por_tamano.png
 ```
 
 ## Políticas de caché evaluadas
